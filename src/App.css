@@ -6,6 +6,16 @@ html {
   background-size: cover;
 }
 
+@media (max-width: 1000px) {
+  html {
+    background: url('../public/static-bg.jpg');
+    -webkit-background-size: auto;
+    -moz-background-size: auto;
+    -o-background-size: auto;
+    background-size: auto;
+  }
+}
+
 .App {
   text-align: center;
 }
