@@ -1,10 +1,19 @@
-import "./App.css";
+import { useEffect } from "react";
 import DistortedLogo from "./audacious-logo-d.png";
 import CampLogo from "./camp-logo.png";
 import Dates from "./dates.png";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
+import "./App.css";
 
-function App() {
+import ReactGA from "react-ga";
+const TRACKING_ID = "G-95R0YBF217"; // OUR_TRACKING_ID
+ReactGA.initialize(TRACKING_ID);
+
+const App = () => {
+  useEffect(() => {
+     ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
+
   return (
     <main className="middle">
       <section className="img-containers">
@@ -34,6 +43,6 @@ function App() {
       </section>
     </main>
   );
-}
+};
 
 export default App;
